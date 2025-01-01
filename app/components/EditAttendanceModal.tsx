@@ -50,7 +50,7 @@ const EditAttendanceModal: React.FC<EditAttendanceModalProps> = ({
   const onSubmit: SubmitHandler<EditAttendanceFormInputs> = async (data) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch(`http://172.20.10.3:3001/api/attendance`, {
+      const response = await fetch(`http://localhost:3001/api/attendance`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const EditAttendanceModal: React.FC<EditAttendanceModalProps> = ({
     //   console.log(first)
     try {
       const response = await fetch(
-        `http://172.20.10.3:3001/api/attendance?student_id=${student.sid}`
+        `http://localhost:3001/api/attendance?student_id=${student.sid}`
       );
 
       if (!response.ok) {

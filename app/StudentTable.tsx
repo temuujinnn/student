@@ -51,7 +51,7 @@ const StudentTable: React.FC = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch("http://172.20.10.3:3001/api/students");
+        const response = await fetch("http://localhost:3001/api/students");
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -117,7 +117,7 @@ const StudentTable: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://172.20.10.3:3001/api/attendance?student_id=${student.sid}`
+        `http://localhost:3001/api/attendance?student_id=${student.sid}`
       );
 
       if (!response.ok) {
@@ -157,7 +157,7 @@ const StudentTable: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://172.20.10.3:3001/api/grade?student_id=${student.sid}`
+        `http://localhost:3001/api/grade?student_id=${student.sid}`
       );
 
       if (!response.ok) {

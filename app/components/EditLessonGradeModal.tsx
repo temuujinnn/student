@@ -44,7 +44,7 @@ const EditLessonGradeModal: React.FC<EditLessonGradeModalProps> = ({
   const onSubmit: SubmitHandler<GradeUpdateRequest> = async (data) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://172.20.10.3:3001/api/grade", {
+      const response = await fetch("http://localhost:3001/api/grade", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const EditLessonGradeModal: React.FC<EditLessonGradeModalProps> = ({
     //localhost:3001/api/grade?student_id=1
     http: try {
       const response = await fetch(
-        `http://172.20.10.3:3001/api/grade?student_id=${student.sid}`
+        `http://localhost:3001/api/grade?student_id=${student.sid}`
       );
 
       if (!response.ok) {

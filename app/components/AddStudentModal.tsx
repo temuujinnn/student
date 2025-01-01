@@ -37,7 +37,7 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({
     setSubmitError(null);
 
     try {
-      const response = await fetch("http://172.20.10.3:3001/api/student", {
+      const response = await fetch("http://localhost:3001/api/student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({
   };
   const fetchStudents = async () => {
     try {
-      const response = await fetch("http://172.20.10.3:3001/api/students");
+      const response = await fetch("http://localhost:3001/api/students");
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
