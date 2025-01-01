@@ -1,0 +1,190 @@
+/* src/StudentTable.css */
+
+/* Container */
+.student-table-container {
+  padding: 20px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .student-table-container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .student-table-container {
+    max-width: 80%;
+  }
+}
+
+/* Responsive Wrapper */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Table Styles */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Ensures horizontal scroll on small screens */
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.student-table th {
+  background-color: #f2f2f2;
+}
+
+.student-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.student-table tr:hover {
+  background-color: #eaeaea;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.edit-btn {
+  background-color: #4f46e5; /* Indigo */
+}
+
+.lessons-btn {
+  background-color: #14b8a6; /* Teal */
+}
+
+.attendance-btn {
+  background-color: #f59e0b; /* Amber */
+}
+
+/* Responsive Styles */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .student-table-container {
+    padding: 15px;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  /* Hide Phone column */
+  .student-table th.phone,
+  .student-table td.phone {
+    display: none;
+  }
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+  .student-table-container {
+    padding: 10px;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  /* Transform table into card layout */
+  .student-table thead {
+    display: none;
+  }
+
+  .student-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .student-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .student-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Add labels before data */
+  .student-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    width: 45%;
+    display: inline-block;
+  }
+
+  /* Adjust Action Buttons for Card Layout */
+  .actions {
+    flex-direction: row;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .action-btn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+}
+
+/* Accessibility Enhancements */
+
+/* Focus States */
+.student-table button:focus {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+  .student-table th,
+  .student-table td {
+    border: 2px solid #000;
+  }
+
+  .student-table th {
+    background-color: #ccc;
+  }
+
+  .student-table tr:nth-child(even) {
+    background-color: #eaeaea;
+  }
+
+  .student-table tr:hover {
+    background-color: #d4d4d4;
+  }
+}
